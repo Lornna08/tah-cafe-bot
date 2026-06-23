@@ -483,12 +483,12 @@ export const BOT_BUILDER_MOBILE: TMobileTourConfig[] = [
 
 export const DBOT_ONBOARDING_MOBILE: TMobileTourConfig[] = [
     {
-        header: <Localize i18n_default_text='Welcome to Deriv Bot' />,
+        header: <Localize i18n_default_text='Welcome to TAH Cafe' />,
         content: [
             <span key='get-started-on-deriv-bot-wrapper'>
                 <Localize
                     key='get-started-on-deriv-bot'
-                    i18n_default_text='Let’s take a quick tour to discover how Deriv Bot works. Press <0>Start</0> to begin.'
+                    i18n_default_text='Let’s take a quick tour to discover how TAH Cafe works. Press <0>Start</0> to begin.'
                     components={[<strong key={0} />]}
                 />
             </span>,
@@ -591,7 +591,7 @@ export const getTourDialogInfo = (is_mobile: boolean) => {
     return is_mobile ? (
         <Localize
             key='tour-dialog-info-mobile'
-            i18n_default_text='Here’s a quick guide on how to use Deriv Bot on the go.'
+            i18n_default_text='Here’s a quick guide on how to use TAH Cafe on the go.'
         />
     ) : (
         <Localize key='tour-dialog-info-desktop' i18n_default_text='Learn how to build a bot with a simple strategy.' />
@@ -610,9 +610,7 @@ export const getTourDialogAction = (is_mobile: boolean) => {
     return '';
 };
 
-export const onboarding_tour_header = (
-    <Localize key='onboarding-tour-header' i18n_default_text='Welcome to Deriv Bot' />
-);
+export const onboarding_tour_header = <Localize key='onboarding-tour-header' i18n_default_text='Welcome to TAH Cafe' />;
 
 export const getBotBuilderTourHeader = (is_mobile: boolean) => {
     if (is_mobile) {

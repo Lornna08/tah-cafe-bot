@@ -118,7 +118,7 @@
         justify-content: center;
 
         &--primary {
-            background-color: var(--brand-red-coral, #ff444f);
+            background-color: var(--brand-red-coral, #1a8754);
             color: #fff;
 
             &:hover {
@@ -133,7 +133,7 @@
             }
 
             &:focus {
-                outline: 2px solid var(--brand-red-coral, #ff444f);
+                outline: 2px solid var(--brand-red-coral, #1a8754);
                 outline-offset: 2px;
             }
         }

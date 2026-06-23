@@ -5,7 +5,7 @@
     min-height: 100vh;
     background: var(--general-main-1, #0e0e0e);
     color: var(--text-general, #fff);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', "Roboto", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 
     &__container {
         text-align: center;
@@ -23,7 +23,7 @@
         font-size: 2.5rem;
         font-weight: 600;
         margin-bottom: 1rem;
-        color: var(--text-red, #ff444f);
+        color: var(--text-red, #1a8754);
     }
 
     &__message {
@@ -42,7 +42,7 @@
         padding: 12px 20px;
         background: rgb(255 68 79 / 10%);
         border-radius: 8px;
-        border-left: 4px solid var(--text-red, #ff444f);
+        border-left: 4px solid var(--text-red, #1a8754);
         font-weight: 500;
     }
 
@@ -52,7 +52,7 @@
         border-radius: 50%;
 
         &.offline {
-            background: var(--text-red, #ff444f);
+            background: var(--text-red, #1a8754);
             animation: pulse 2s infinite;
         }
 
@@ -62,7 +62,7 @@
     }
 
     &__retry {
-        background: var(--text-red, #ff444f);
+        background: var(--text-red, #1a8754);
         color: #fff;
         border: none;
         padding: 15px 30px;

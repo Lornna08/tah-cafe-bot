@@ -30,7 +30,7 @@ const MigrationModal = observer(() => {
             className='migration-modal'
         >
             <Modal.Header
-                image={<img src={getUrlBase('/assets/images/ic_dbot.png')} alt='Deriv Bot' width={96} height={96} />}
+                image={<img src={getUrlBase('/assets/images/ic_dbot.png')} alt='TAH Cafe' width={96} height={96} />}
                 className='migration-modal__header'
                 style={{ backgroundColor: 'var(--semantic-color-slate-solid-surface-normal-low)' }}
             />

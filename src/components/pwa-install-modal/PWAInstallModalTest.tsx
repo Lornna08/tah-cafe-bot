@@ -5,7 +5,7 @@ export const PWAInstallModalTest: React.FC = () => {
     const [showModal, setShowModal] = useState(false);
 
     const styles = {
-        backgroundColor: '#ff444f',
+        backgroundColor: '#1a8754',
         color: 'white',
         padding: '10px 15px',
         borderRadius: '5px',

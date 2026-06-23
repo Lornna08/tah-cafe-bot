@@ -276,7 +276,7 @@ const AppContent = observer(() => {
     const getLoadingMessage = () => {
         if (is_eu_error_loading) return '';
         if (!isOnline) return localize('Loading offline dashboard...');
-        return localize('Initializing Deriv Bot account...');
+        return localize('Initializing TAH Cafe account...');
     };
 
     // Skip loading entirely when offline - show dashboard directly

@@ -64,7 +64,7 @@ export const PWAUpdateNotification: React.FC<PWAUpdateNotificationProps> = ({
                 <div className='pwa-update-notification__message'>
                     <h4 className='pwa-update-notification__title'>App Update Available</h4>
                     <p className='pwa-update-notification__description'>
-                        A new version of Deriv Bot is ready. Update now for the latest features and improvements.
+                        A new version of TAH Cafe is ready. Update now for the latest features and improvements.
                     </p>
                 </div>
 

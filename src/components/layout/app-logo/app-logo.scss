@@ -8,3 +8,11 @@
         align-items: center;
     }
 }
+
+img.tah-logo {
+    height: 40px !important;
+    width: auto !important;
+    max-height: none !important;
+    object-fit: contain;
+    vertical-align: middle;
+}

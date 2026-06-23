@@ -1,11 +1,11 @@
 {
-  "name": "Deriv Bot - Automated Trading Platform",
-  "short_name": "Deriv Bot",
+  "name": "TAH Cafe - Automated Trading Platform",
+  "short_name": "TAH Cafe",
   "description": "Automated trading at your fingertips. No coding needed.",
   "start_url": "/?source=mobile",
   "display": "standalone",
   "background_color": "#0e0e0e",
-  "theme_color": "#ff444f",
+  "theme_color": "#1a8754",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en",
@@ -67,14 +67,14 @@
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Deriv Bot Dashboard"
+      "label": "TAH Cafe Dashboard"
     },
     {
       "src": "/assets/screenshots/mobile-screenshot.png",
       "sizes": "640x1136",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Deriv Bot Mobile View"
+      "label": "TAH Cafe Mobile View"
     }
   ],
   "shortcuts": [
@@ -109,7 +109,7 @@
     "/",
     "/offline.html",
     "/manifest.json",
-    "/deriv-logo.svg"
+    "/tah-logo.png"
   ],
   "offline_fallback": "/offline.html"
 }

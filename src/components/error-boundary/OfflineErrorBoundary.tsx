@@ -107,7 +107,7 @@ const DefaultOfflineErrorFallback: React.FC<{ error?: Error; resetError?: () => 
 
                 <h1
                     style={{
-                        color: '#ff444f',
+                        color: '#1a8754',
                         fontSize: '2rem',
                         marginBottom: '1rem',
                         fontWeight: '600',
@@ -139,7 +139,7 @@ const DefaultOfflineErrorFallback: React.FC<{ error?: Error; resetError?: () => 
                         padding: '12px 20px',
                         backgroundColor: 'rgba(255, 68, 79, 0.1)',
                         borderRadius: '8px',
-                        borderLeft: '4px solid #ff444f',
+                        borderLeft: '4px solid #1a8754',
                     }}
                 >
                     <span
@@ -147,7 +147,7 @@ const DefaultOfflineErrorFallback: React.FC<{ error?: Error; resetError?: () => 
                             width: '12px',
                             height: '12px',
                             borderRadius: '50%',
-                            backgroundColor: isOnline ? '#4bb4b3' : '#ff444f',
+                            backgroundColor: isOnline ? '#4bb4b3' : '#1a8754',
                         }}
                     ></span>
                     {isOnline ? localize('Online') : localize('Offline')}
@@ -157,7 +157,7 @@ const DefaultOfflineErrorFallback: React.FC<{ error?: Error; resetError?: () => 
                     <button
                         onClick={() => window.location.reload()}
                         style={{
-                            backgroundColor: '#ff444f',
+                            backgroundColor: '#1a8754',
                             color: 'white',
                             border: 'none',
                             padding: '15px 30px',

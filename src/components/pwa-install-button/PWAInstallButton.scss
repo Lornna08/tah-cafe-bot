@@ -12,7 +12,7 @@
     white-space: nowrap;
 
     &:focus {
-        outline: 2px solid var(--brand-red-coral, #ff444f);
+        outline: 2px solid var(--brand-red-coral, #1a8754);
         outline-offset: 2px;
     }
 
@@ -23,7 +23,7 @@
 
     // Variants
     &--primary {
-        background-color: var(--brand-red-coral, #ff444f);
+        background-color: var(--brand-red-coral, #1a8754);
         color: fff;
 
         &:hover:not(:disabled) {
@@ -40,11 +40,11 @@
 
     &--secondary {
         background-color: transparent;
-        color: var(--brand-red-coral, #ff444f);
-        border: 1px solid var(--brand-red-coral, #ff444f);
+        color: var(--brand-red-coral, #1a8754);
+        border: 1px solid var(--brand-red-coral, #1a8754);
 
         &:hover:not(:disabled) {
-            background-color: var(--brand-red-coral, #ff444f);
+            background-color: var(--brand-red-coral, #1a8754);
             color: fff;
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgb(255 68 79 / 20%);
@@ -62,11 +62,11 @@
 
         &:hover:not(:disabled) {
             background-color: var(--general-hover, #f5f5f5);
-            color: var(--brand-red-coral, #ff444f);
+            color: var(--brand-red-coral, #1a8754);
         }
 
         .pwa-install-button__icon {
-            color: var(--brand-red-coral, #ff444f);
+            color: var(--brand-red-coral, #1a8754);
         }
     }
 

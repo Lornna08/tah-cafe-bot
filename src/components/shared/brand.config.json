@@ -1,5 +1,5 @@
 {
-    "brand_name": "Deriv",
+    "brand_name": "TAH Cafe",
     "domain_name": "Deriv.com",
     "legal_entities": {
         "fx": "Deriv (FX) Ltd",
@@ -16,7 +16,7 @@
             "icon": "IcRebrandingDerivTrader"
         },
         "dbot": {
-            "name": "Deriv Bot",
+            "name": "TAH Cafe",
             "icon": "IcRebrandingDerivBot"
         },
         "mt5": {
@@ -51,7 +51,7 @@
             "availability": "All"
         },
         "dbot": {
-            "name": "Deriv Bot",
+            "name": "TAH Cafe",
             "icon": "DBot",
             "availability": "Non-EU"
         },

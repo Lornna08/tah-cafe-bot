@@ -1,9 +1,9 @@
-// Comprehensive Service Worker for Deriv Bot Offline Functionality
+// Comprehensive Service Worker for TAH Cafe Offline Functionality
 const CACHE_NAME = 'deriv-bot-v1';
 const OFFLINE_URL = '/offline.html';
 
 // Files to cache immediately on install
-const PRECACHE_URLS = ['/', '/index.html', '/offline.html', '/manifest.json', '/deriv-logo.svg'];
+const PRECACHE_URLS = ['/', '/index.html', '/offline.html', '/manifest.json', '/tah-logo.png'];
 
 console.log('[SW] Service worker script loaded');
 
@@ -310,7 +310,7 @@ async function handleOfflineFallback(request) {
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Offline - Deriv Bot</title>
+                <title>Offline - TAH Cafe</title>
                 <style>
                     body { 
                         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -329,7 +329,7 @@ async function handleOfflineFallback(request) {
                         padding: 40px 20px;
                     }
                     h1 { 
-                        color: #ff444f; 
+                        color: #1a8754; 
                         font-size: 2.5rem;
                         margin-bottom: 1rem;
                     }
@@ -340,7 +340,7 @@ async function handleOfflineFallback(request) {
                         opacity: 0.9;
                     }
                     button { 
-                        background: #ff444f; 
+                        background: #1a8754; 
                         color: white; 
                         border: none; 
                         padding: 15px 30px; 
@@ -358,14 +358,14 @@ async function handleOfflineFallback(request) {
                         padding: 15px;
                         background: rgba(255, 68, 79, 0.1);
                         border-radius: 8px;
-                        border-left: 4px solid #ff444f;
+                        border-left: 4px solid #1a8754;
                     }
                 </style>
             </head>
             <body>
                 <div class="container">
                     <h1>You're Offline</h1>
-                    <p>Deriv Bot requires an internet connection to function properly. Please check your connection and try again.</p>
+                    <p>TAH Cafe requires an internet connection to function properly. Please check your connection and try again.</p>
                     <button onclick="window.location.reload()">Try Again</button>
                     <div class="status">
                         <strong>Connection Status:</strong> <span id="status">Offline</span>

@@ -2,12 +2,12 @@ import { LocalStorageConstants, LocalStorageUtils, URLUtils } from '@deriv-com/u
 import { isStaging } from '../url/helpers';
 
 export const APP_IDS = {
-    LOCALHOST: 36300,
+    LOCALHOST: '33tsnYIuso2jECtp9ozke',
     TMP_STAGING: 64584,
     STAGING: 29934,
     STAGING_BE: 29934,
     STAGING_ME: 29934,
-    PRODUCTION: 65555,
+    PRODUCTION: '33tsnYIuso2jECtp9ozke',
     PRODUCTION_BE: 65556,
     PRODUCTION_ME: 65557,
 };
@@ -59,7 +59,7 @@ const getDefaultServerURL = () => {
     const loginid = window.localStorage.getItem('active_loginid') ?? active_loginid_from_url;
     const is_real = loginid && !/^(VRT|VRW)/.test(loginid);
 
-    const server = is_real ? 'green' : 'blue';
+    const server = is_real ? 'green' : 'green';
     const server_url = `${server}.derivws.com`;
 
     return server_url;
