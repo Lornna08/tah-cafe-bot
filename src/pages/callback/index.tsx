@@ -15,8 +15,8 @@ const CallbackPage = () => {
                 return;
             }
 
-            const storedState = sessionStorage.getItem('oauth_state');
-            const codeVerifier = sessionStorage.getItem('pkcgit add -Ae_code_verifier');
+            const storedState = localStorage.getItem('oauth_state');
+            const codeVerifier = localStorage.getItem('pkce_code_verifier');
 
             if (!code || !state || state !== storedState || !codeVerifier) {
                 setStatus('Login failed: invalid state. Please try again.');
@@ -44,8 +44,8 @@ const CallbackPage = () => {
                 }
 
                 localStorage.setItem('tah_access_token', data.access_token);
-                sessionStorage.removeItem('pkce_code_verifier');
-                sessionStorage.removeItem('oauth_state');
+                localStorage.removeItem('pkce_code_verifier');
+                localStorage.removeItem('oauth_state');
 
                 // eslint-disable-next-line no-console
                 console.log('Access token received:', data.access_token);

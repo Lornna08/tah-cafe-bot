@@ -35,8 +35,8 @@ export async function startTahLogin(): Promise<void> {
     const state = generateState();
 
     // Store verifier + state so the callback can use them
-    sessionStorage.setItem('pkce_code_verifier', codeVerifier);
-    sessionStorage.setItem('oauth_state', state);
+    localStorage.setItem('pkce_code_verifier', codeVerifier);
+    localStorage.setItem('oauth_state', state);
 
     const redirectUri = `${window.location.origin}/callback`;
 
