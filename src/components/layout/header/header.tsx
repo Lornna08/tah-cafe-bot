@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import clsx from 'clsx';
 import { observer } from 'mobx-react-lite';
 import PWAInstallButton from '@/components/pwa-install-button';
-import { generateOAuthURL, standalone_routes } from '@/components/shared';
+import { standalone_routes } from '@/components/shared';
 import Button from '@/components/shared_ui/button';
 import useActiveAccount from '@/hooks/api/account/useActiveAccount';
 import { useOauth2 } from '@/hooks/auth/useOauth2';
@@ -10,12 +10,10 @@ import { useFirebaseCountriesConfig } from '@/hooks/firebase/useFirebaseCountrie
 import { useApiBase } from '@/hooks/useApiBase';
 import { useStore } from '@/hooks/useStore';
 import useTMB from '@/hooks/useTMB';
-import { clearAuthData, handleOidcAuthFailure } from '@/utils/auth-utils';
+import { startTahLogin } from '@/utils/tah-auth';
 import { StandaloneCircleUserRegularIcon } from '@deriv/quill-icons/Standalone';
-import { requestOidcAuthentication } from '@deriv-com/auth-client';
 import { Localize, useTranslations } from '@deriv-com/translations';
-import { Header, useDevice, Wrapper } from '@deriv-com/ui';
-import { Tooltip } from '@deriv-com/ui';
+import { Header, Tooltip, useDevice, Wrapper } from '@deriv-com/ui';
 import { AppLogo } from '../app-logo';
 import AccountsInfoLoader from './account-info-loader';
 import AccountSwitcher from './account-switcher';
@@ -137,41 +135,8 @@ const AppHeader = observer(({ isAuthenticating }: TAppHeaderProps) => {
                 <div className='auth-actions'>
                     <Button
                         tertiary
-                        onClick={async () => {
-                            clearAuthData(false);
-                            const getQueryParams = new URLSearchParams(window.location.search);
-                            const currency = getQueryParams.get('account') ?? '';
-                            const query_param_currency =
-                                currency || sessionStorage.getItem('query_param_currency') || 'USD';
-
-                            try {
-                                // First, explicitly wait for TMB status to be determined
-                                const tmbEnabled = await isTmbEnabled();
-                                // Now use the result of the explicit check
-                                if (tmbEnabled) {
-                                    await onRenderTMBCheck(true); // Pass true to indicate it's from login button
-                                } else {
-                                    // Always use OIDC if TMB is not enabled
-                                    try {
-                                        await requestOidcAuthentication({
-                                            redirectCallbackUri: `${window.location.origin}/callback`,
-                                            ...(query_param_currency
-                                                ? {
-                                                      state: {
-                                                          account: query_param_currency,
-                                                      },
-                                                  }
-                                                : {}),
-                                        });
-                                    } catch (err) {
-                                        handleOidcAuthFailure(err);
-                                        window.location.replace(generateOAuthURL());
-                                    }
-                                }
-                            } catch (error) {
-                                // eslint-disable-next-line no-console
-                                console.error(error);
-                            }
+                        onClick={() => {
+                            startTahLogin();
                         }}
                     >
                         <Localize i18n_default_text='Log in' />
