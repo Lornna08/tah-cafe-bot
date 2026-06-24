@@ -1,5 +1,5 @@
 // Comprehensive Service Worker for TAH Cafe Offline Functionality
-const CACHE_NAME = 'deriv-bot-v1';
+const CACHE_NAME = 'tah-cafe-v2';
 const OFFLINE_URL = '/offline.html';
 
 // Files to cache immediately on install
@@ -441,32 +441,23 @@ function isAuthRequest(url) {
     }
 
     // Skip all authentication-related requests
+    // Our own callback page must load the app (do NOT skip it)
+    if (url.hostname === self.location.hostname && url.pathname.includes('/callback')) {
+        return false;
+    }
+
     return (
-        // OAuth/OIDC endpoints
-        url.pathname.includes('/oauth') ||
-        url.pathname.includes('/auth') ||
-        url.pathname.includes('/login') ||
-        url.pathname.includes('/logout') ||
-        url.pathname.includes('/token') ||
-        url.pathname.includes('/authorize') ||
-        url.pathname.includes('/callback') ||
-        // Deriv-specific auth endpoints (using secure domain validation)
+        // External OAuth/OIDC endpoints (other domains only)
         isAllowedDomain(url.hostname, 'oauth.deriv.com') ||
         isAllowedDomain(url.hostname, 'auth.deriv.com') ||
         isAllowedDomain(url.hostname, 'accounts.deriv.com') ||
-        // Third-party auth providers (using secure domain validation)
+        // Third-party auth providers
         isAllowedDomain(url.hostname, 'google.com') ||
         isAllowedDomain(url.hostname, 'googleapis.com') ||
         isAllowedDomain(url.hostname, 'facebook.com') ||
         isAllowedDomain(url.hostname, 'apple.com') ||
         isAllowedDomain(url.hostname, 'microsoft.com') ||
-        isAllowedDomain(url.hostname, 'live.com') ||
-        // Auth-related query parameters
-        url.search.includes('code=') ||
-        url.search.includes('state=') ||
-        url.search.includes('token=') ||
-        url.search.includes('access_token=') ||
-        url.search.includes('id_token=')
+        isAllowedDomain(url.hostname, 'live.com')
     );
 }
 // [/AI]
