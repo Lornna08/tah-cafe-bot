@@ -47,9 +47,19 @@ const CallbackPage = () => {
                 localStorage.removeItem('pkce_code_verifier');
                 localStorage.removeItem('oauth_state');
 
+                setStatus('Token received. Fetching accounts...');
+
+                // Discovery: fetch accounts to see their structure
+                const connectRes = await fetch('/api/auth/connect', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ access_token: data.access_token }),
+                });
+                const connectData = await connectRes.json();
                 // eslint-disable-next-line no-console
-                console.log('Access token received:', data.access_token);
-                setStatus('Login successful! Token received. (Next: connect to API)');
+                console.log('CONNECT RESULT:', JSON.stringify(connectData, null, 2));
+                setStatus('Check console for account data.');
+                return;
 
                 // For now, send back to home after a moment so we can see it worked
                 setTimeout(() => {
